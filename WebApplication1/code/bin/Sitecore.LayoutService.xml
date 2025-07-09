@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sitecore.LayoutService</name>
+    </assembly>
+    <members>
+        <member name="M:Sitecore.LayoutService.ComponentRendering.ComponentPlaceholderContext.Dispose">
+            <summary>
+            Disposes resources etc.
+            </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.ComponentRendering.ComponentPlaceholderContext.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources etc.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:Sitecore.LayoutService.ComponentRendering.IComponentRenderingService">
+            <summary>
+            Instantiates component rendering service.
+            </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.ComponentRendering.IComponentRenderingService.RenderRendering(Sitecore.Mvc.Presentation.Rendering,Sitecore.LayoutService.Configuration.IRenderingConfiguration)">
+            <summary>
+            Renders a component, if nested components are present, they will be also rendered.
+            </summary>
+            <param name="rendering">The component to render.</param>
+            <param name="renderingConfiguration">The rendering configuration.</param>
+            <returns>The <see cref="T:Sitecore.LayoutService.ItemRendering.RenderedPlaceholder" />.</returns>
+        </member>
+        <member name="T:Sitecore.LayoutService.Configuration.DefaultRequestContext">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.LayoutService.Configuration.DefaultRequestContext.Database">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.LayoutService.Configuration.DefaultRequestContext.DatabaseName">
+            <inheritdoc />
+        </member>
+        <member name="P:Sitecore.LayoutService.Configuration.IRequestContext.Database">
+            <summary>
+            The database that this configuration will use to get content. If databaseName is not defined context database is returned.
+            </summary>
+        </member>
+        <member name="P:Sitecore.LayoutService.Configuration.IRequestContext.DatabaseName">
+            <summary>
+            The database name that this configuration will use to get content.
+            </summary>
+        </member>
+        <member name="T:Sitecore.LayoutService.ItemRendering.Factories.Interfaces.IRenderingFactory">
+            <summary>
+            Instantiates rendering class
+            </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.ItemRendering.Factories.Interfaces.IRenderingFactory.GetRendering(Sitecore.Data.Items.Item)">
+            <summary>
+            Creates rendering for layout based on item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns>The <see cref="T:Sitecore.Mvc.Presentation.Rendering" /> for rendering type layout.</returns>
+        </member>
+        <member name="M:Sitecore.LayoutService.ItemRendering.Factories.Interfaces.IRenderingFactory.GetRenderingFromCurrentPageContext(System.Guid)">
+            <summary>
+            Gets rendering from the current page context.
+            </summary>
+            <param name="componentUniqueId">The rendering unique id.</param>
+            <returns>The <see cref="T:Sitecore.Mvc.Presentation.Rendering" />.</returns>
+        </member>
+        <member name="M:Sitecore.LayoutService.ItemRendering.Factories.Interfaces.IRenderingFactory.Create(Sitecore.Data.Items.RenderingItem,System.String,System.String,System.Guid)">
+            <summary>
+            Creates rendering for component based on provided parameters.
+            </summary>
+            <param name="renderingItem">The <see cref="T:Sitecore.Data.Items.RenderingItem" />.</param>
+            <param name="dataSourceId">The dataSource item id.</param>
+            <param name="renderingUniqueId">The rendering unique id.</param>
+            <param name="layoutId">The layout id.</param>
+            <returns>The <see cref="T:Sitecore.Mvc.Presentation.Rendering" /> for rendering type rendering.</returns>
+        </member>
+        <member name="T:Sitecore.LayoutService.ItemRendering.Factories.RenderingFactory">
+            <inheritdoc cref="T:Sitecore.LayoutService.ItemRendering.Factories.Interfaces.IRenderingFactory"/>
+        </member>
+        <member name="T:Sitecore.LayoutService.ItemRendering.ILayoutService">
+            <summary>
+            Instantiates layout service.
+            </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.ItemRendering.ILayoutService.Render(Sitecore.Data.Items.Item,Sitecore.LayoutService.Configuration.IRenderingConfiguration,Sitecore.LayoutService.ItemRendering.RenderOptions)">
+            <summary>
+            Renders an item.
+            </summary>
+            <param name="item">The item to render.</param>
+            <param name="renderingConfiguration">Configured services used for rendering the item.</param>
+            <param name="renderOptions">Optional parameters for rendering the item.</param>
+            <returns>The <see cref="T:Sitecore.LayoutService.ItemRendering.RenderedItem" /> with layout for rendered item.</returns>
+        </member>
+        <member name="M:Sitecore.LayoutService.ItemRendering.ILayoutService.RenderComponent(Sitecore.Data.Items.Item,Sitecore.Mvc.Presentation.Rendering,Sitecore.LayoutService.Configuration.IRenderingConfiguration,Sitecore.LayoutService.ItemRendering.RenderOptions)">
+            <summary>
+            Renders a component of the item, if nested components are present, they will be also rendered.
+            </summary>
+            <param name="item">The item component to render belongs to.</param>
+            <param name="rendering">The component to render.</param>
+            <param name="renderingConfiguration">Configured services used for rendering the item.</param>
+            <param name="renderOptions">Optional parameters for rendering the component.</param>
+            <returns>The <see cref="T:Sitecore.LayoutService.ItemRendering.RenderedItem" /> with layout for rendered component only.</returns>
+        </member>
+        <member name="T:Sitecore.LayoutService.ItemRendering.LayoutService">
+            <inheritdoc cref="T:Sitecore.LayoutService.ItemRendering.ILayoutService"/>
+        </member>
+        <member name="P:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.GetLayoutServiceContextArgs.RenderedItem">
+            <summary>
+            The item being rendered. CAN BE NULL, if it's an item-not-found situation.
+            </summary>
+        </member>
+        <member name="T:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.ItemPathContext">
+            <summary>
+            Defines a <see cref="T:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.GetLayoutServiceContextPipeline"/> processor
+            that sets the path of the current rendered item in <see cref="P:Sitecore.LayoutService.ItemRendering.RenderedItem.Context"/> by the <see cref="F:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.ItemPathContext.Key"/>.
+            </summary>
+            <remarks>
+            The path is generated with using capabilities provided by <see cref="T:Sitecore.Abstractions.BaseLinkManager"/>.
+            </remarks>
+        </member>
+        <member name="F:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.ItemPathContext.Key">
+            <summary>
+            The key in <see cref="P:Sitecore.LayoutService.ItemRendering.RenderedItem.Context"/> dictionary,
+            where the processor stores the current item's path.
+            </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.ItemPathContext.#ctor(Sitecore.Abstractions.BaseLinkManager)">
+            <summary>
+            Initializes a new instance of <see cref="T:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.ItemPathContext"/> class with the <paramref name="linkManager"/>.
+            </summary>
+            <param name="linkManager">
+            The link manager instance that will be used when resolving the path of the current rendered item.
+            </param>
+        </member>
+        <member name="P:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.ItemPathContext.UrlOptions">
+            <summary>
+            Gets an instance of URL options that will be used in the item path resolving.
+            </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.ItemPathContext.Process(Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext.GetLayoutServiceContextArgs)">
+            <inheritdoc />
+        </member>
+        <member name="T:Sitecore.LayoutService.ItemRendering.PlaceholderRenderingService">
+            <inheritdoc cref="T:Sitecore.LayoutService.ItemRendering.IPlaceholderRenderingService"/>
+            <inheritdoc cref="T:Sitecore.LayoutService.ComponentRendering.IComponentRenderingService"/>
+        </member>
+        <member name="T:Sitecore.LayoutService.Presentation.Pipelines.RenderRendering.AddRecordedJsonToCache">
+            <summary>
+            Adds cacheable JSON rendering data to the HTML cache for later retrieval
+            during rendering of cached JSON renderings. The source object is cached,
+            not a JSON string, to avoid the need to re-parse it later.
+            </summary>
+        </member>
+        <member name="T:Sitecore.LayoutService.Presentation.Pipelines.RenderRendering.RenderJsonFromCache">
+             <summary>
+             Rendering JSON renderings from output cache is more complex than a normal rendering,
+             because we're caching both the HTML stub that refers to the JSON object by ID (<see cref="T:Sitecore.LayoutService.Presentation.RenderedJsonRenderingContext"/>)
+             and the actual object that gets serialized into JSON. So we have to restore both the HTML cache and the JSON to serialize.
+            
+             This processor also handles restoring HTML cache for JSON renderings, since we need their HTML stub to find the JSON data.
+             </summary>
+        </member>
+        <member name="T:Sitecore.LayoutService.Presentation.RenderedJsonRenderingContext">
+             <summary>
+             Stores renderings keyed by a GUID after they are rendered to JSON. This context allows us to look up the rendering data later for serialization,
+             when rendering has completed, without needing to perform multiple de/reserializations of the data when it's stored in the rendered placeholder (HTML).
+            
+             Instead, we store the GUID in the rendered HTML, and serialize it once at the end.
+             </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.Serialization.FieldSerializers.BaseFieldSerializer.WriteExtendedValues(Sitecore.Data.Fields.Field,Newtonsoft.Json.JsonTextWriter)">
+            <summary>
+            Write additional key/value pairs to the field object (or other data)
+            </summary>
+            <param name="field"></param>
+            <param name="writer"></param>
+        </member>
+        <member name="T:Sitecore.LayoutService.Serialization.FieldSerializers.BaseWrapperFieldSerializer">
+            <summary>
+            Base class for field serializer types that allow wrapping their editable value with children,
+            e.g. a link that can wrap other content within its rendered value with a start and end tag
+            </summary>
+        </member>
+        <member name="M:Sitecore.LayoutService.Serialization.FieldSerializers.IFieldSerializer.Serialize(Sitecore.Data.Fields.Field,Newtonsoft.Json.JsonTextWriter)">
+            <summary>
+            Serializes the field value to JSON
+            </summary>
+        </member>
+        <member name="P:Sitecore.LayoutService.Serialization.FieldSerializers.IFieldSerializer.EnableRenderedValues">
+            <summary>
+            Whether to return the FieldRendered field value ('editable') for experience editor support
+            </summary>
+        </member>
+        <member name="T:Sitecore.LayoutService.Serialization.JsonContractResolver">
+            <summary>
+            Retains the casing of dictionary keys, since in general we can assume they will be coming from dynamic data (e.g. rendering params or translation dictionaries).
+            </summary>
+        </member>
+    </members>
+</doc>

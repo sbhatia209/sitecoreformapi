@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custom.Foundation.FormSubmission", "WebApplication1\code\Custom.Foundation.FormSubmission.csproj", "{D0115A94-92C5-4D62-BA06-E715C9EE2C5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0115A94-92C5-4D62-BA06-E715C9EE2C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0115A94-92C5-4D62-BA06-E715C9EE2C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0115A94-92C5-4D62-BA06-E715C9EE2C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0115A94-92C5-4D62-BA06-E715C9EE2C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0559F3A9-6892-40CE-B04E-1B79733F28C9}
+	EndGlobalSection
+EndGlobal
